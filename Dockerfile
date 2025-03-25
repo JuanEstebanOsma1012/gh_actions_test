@@ -5,4 +5,4 @@ RUN npm install
 RUN npm install express
 COPY . .
 EXPOSE 3000
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
