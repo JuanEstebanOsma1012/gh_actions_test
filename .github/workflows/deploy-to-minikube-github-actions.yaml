@@ -19,7 +19,6 @@ jobs:
           docker build -f ./Dockerfile -t nodejs-app:latest .
           echo -n "verifying images:"
           docker images
-          minikube cache add nodejs-app:latest
           minikube image load nodejs-app:latest
       - name: Deploy to minikube
         run: kubectl apply -f k8s-node-app.yaml
