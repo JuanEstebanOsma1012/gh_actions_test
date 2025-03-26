@@ -25,6 +25,8 @@ jobs:
         run: minikube image load devopshint/nodejs-app:latest
       - name: Deploy to minikube
         run: kubectl apply -f k8s-node-app.yaml
+      - name: Delay for the container to be created
+        run: sleep 15
       - name: Try the cluster again!
         run: kubectl get pods -A
       - name: Test service URLs
